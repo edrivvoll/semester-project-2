@@ -5,6 +5,9 @@
 
 $primary: green;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../node_modules/bootstrap/scss/bootstrap';
 
 // Then add additional custom code here
+body {
+  background-color: rgb(154, 159, 255);
+}
