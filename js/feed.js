@@ -1,9 +1,5 @@
-import { getPosts } from './functions/getPosts.js';
+import { getListings } from './functions/getListings.js';
+import { renderListings } from './functions/renderListings.js';
 
-export async function renderPosts() {
-  const posts = await getPosts();
-  console.log(posts);
-}
-
-getPosts();
-renderPosts();
+getListings();
+renderListings();

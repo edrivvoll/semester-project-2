@@ -1,7 +1,7 @@
 import { apiAuctionListings, apiBase, apiKey } from '../urls.js';
 import { load } from '../functions/load.js';
 
-export async function getPosts() {
+export async function getListings() {
   const token = load('token');
   if (!token) throw new Error('No authorization token found');
 

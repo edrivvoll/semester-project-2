@@ -1,4 +1,4 @@
-// import { getPosts } from "../getPosts.js";
+// import { getListings } from "../getListings.js";
 
 import { login } from './login.js';
 import { register } from './register.js';
@@ -34,7 +34,7 @@ export async function onAuth(event) {
       window.location.replace('/src/feed.html');
     }
 
-    // const posts = await getPosts();
+    // const posts = await getListings();
     // console.log(posts);
   } catch (error) {
     console.error(error); // Optional for debugging
