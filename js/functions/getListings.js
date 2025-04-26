@@ -1,11 +1,11 @@
-import { apiAuctionListings, apiBase, apiKey } from '../urls.js';
-import { load } from '../functions/load.js';
+import { apiAuctionListings, apiBase, apiKey, apiSeller } from '../urls.js';
+import { load } from './load.js';
 
 export async function getListings() {
   const token = load('token');
   if (!token) throw new Error('No authorization token found');
 
-  const response = await fetch(`${apiBase}${apiAuctionListings}`, {
+  const response = await fetch(`${apiBase}${apiAuctionListings}${apiSeller}`, {
     headers: {
       Authorization: `Bearer ${token}`,
       'X-Noroff-API-Key': `${apiKey}`,
@@ -18,3 +18,4 @@ export async function getListings() {
 
   return await response.json();
 }
+//

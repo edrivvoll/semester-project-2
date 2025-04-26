@@ -2,6 +2,7 @@ export const apiBase = 'https://v2.api.noroff.dev';
 export const apiAuth = '/auth';
 export const apiReg = '/register';
 export const apiLogin = '/login';
+export const apiSeller = '/?_seller=true&_bids=true';
 export const apiAuctionListings = '/auction/listings';
 export const apiAuctionProfiles = '/auction/profiles';
 
