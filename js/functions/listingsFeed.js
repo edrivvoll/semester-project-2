@@ -35,7 +35,7 @@ export async function listingsFeed() {
             <div class="card-body">
                 <h5 class="card-title">${i.title}</h5>
                 <p class="card-text">${i.description}</p>
-                <a href="/src/singllisting.html?id=${i.id}" class="btn btn-primary">View Post</a>
+                <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary">View Post</a>
                     <div class="button-container"></div>
                 </div>
         </div>
