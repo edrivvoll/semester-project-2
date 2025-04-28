@@ -6,12 +6,12 @@ export async function renderSingleListing() {
 
   console.log(listingArray);
 
-  const container = document.querySelector('#single-listing-container');
-  container.innerHTML = '';
+  const listingContainer = document.querySelector('#single-listing-container');
+  listingContainer.innerHTML = '';
   console.log(listingArray.media.length === 0);
   if (listingArray.media.length === 0) {
-    container.innerHTML = `                
-        <div class="col-md-6 col-sm-6 col-xl-4 text-center">
+    listingContainer.innerHTML = `                
+        <div class="w-75 text-center">
             <div class="card mb-4">
                 <img src="#" alt="">
                 <div class="card-body">
@@ -23,8 +23,8 @@ export async function renderSingleListing() {
         </div>
         `;
   } else {
-    container.innerHTML = `                
-        <div class="col-md-6 col-sm-10 col-xl-10 text-center">
+    listingContainer.innerHTML = `                
+        <div class="w-75 text-center">
             <div class="card mb-4">
                 <img class="img" src="${listingArray.media[0].url}" alt="${listingArray.media[0].alt}">
                 <div class="card-body">
@@ -35,5 +35,19 @@ export async function renderSingleListing() {
             </div>
         </div>
         `;
+  }
+
+  const bidContainer = document.querySelector('#bid-container');
+  bidContainer.innerHTML = '';
+  console.log(listingArray.bids);
+  for (let i = 0; i < listingArray.bids.length; i++) {
+    bidContainer.innerHTML += `
+    <tr>
+      <th scope="row">${i + 1}</th>
+      <td>${listingArray.bids[i].bidder.name}</td>
+      <td>${listingArray.bids[i].amount}</td>
+      <td>${listingArray.bids[i].created}</td>
+    </tr>
+    `;
   }
 }
