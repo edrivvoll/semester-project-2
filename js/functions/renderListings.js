@@ -1,6 +1,6 @@
 import { getListings } from './getListings.js';
 
 export async function renderListings() {
-  const posts = await getListings();
-  console.log(posts);
+  const listing = await getListings({ includeSeller: true, useAuth: true });
+  console.log(listing);
 }

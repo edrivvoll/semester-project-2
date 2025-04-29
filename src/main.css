@@ -11867,4 +11867,9 @@ header {
   height: 50px;
   object-fit: cover;
   cursor: pointer;
+}
+
+.card {
+  max-width: 600px;
+  margin: 0 auto;
 }/*# sourceMappingURL=main.css.map */

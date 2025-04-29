@@ -5,7 +5,36 @@ const querryString = document.location.search;
 const params = new URLSearchParams(querryString);
 const id = params.get('id');
 
-export async function getSingleListing() {
+export async function getSingleListing({
+  includeSeller = true,
+  useAuth = false,
+} = {}) {
+  const token = load('token');
+
+  // Build query string based on whether to include seller info
+  // const query = includeSeller ? apiSeller : '';
+  const query = includeSeller ? apiSeller : '';
+
+  const response = await fetch(
+    `${apiBase}${apiAuctionListings}/${id}${query}`,
+    {
+      headers: {
+        'X-Noroff-API-Key': apiKey,
+        ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    }
+  );
+
+  if (!response.ok) {
+    const error = await response.json();
+    throw new Error(error.message || 'Could not fetch listings');
+  }
+
+  const result = await response.json();
+  return result.data; // v2 wraps listings in `data`
+}
+
+/* export async function getSingleListing() {
   const token = load('token');
   if (!token) throw new error('No authorization token found');
 
@@ -23,4 +52,4 @@ export async function getSingleListing() {
     throw new Error(error.message || 'Could not fetch listing');
   }
   return await response.json();
-}
+} */

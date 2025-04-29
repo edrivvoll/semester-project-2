@@ -4,15 +4,15 @@ import { load } from './load.js';
 export async function listingsFeed() {
   const listings = await getListings();
   const listingsContainer = document.getElementById('listings-container');
-  const listingsArray = listings.data;
+  // const listingsArray = listings.data;
   const userEmail = load('useremail');
-
+  console.log(listings);
   listingsContainer.innerHTML = ``;
 
-  listingsArray.forEach((i) => {
-    const sellerEmail = i.seller.email;
+  listings.forEach((i) => {
+    // const sellerEmail = i.seller.email;
     // console.log(sellerEmail);
-    const isSeller = sellerEmail === userEmail;
+    // const isSeller = sellerEmail === userEmail;
     // console.log(isSeller);
     // console.log(i.media.url);
 

@@ -1,21 +1,28 @@
 import { apiAuctionListings, apiBase, apiKey, apiSeller } from '../urls.js';
 import { load } from './load.js';
 
-export async function getListings() {
+// Allow usage as guest or with auth
+export async function getListings({
+  includeSeller = true,
+  useAuth = false,
+} = {}) {
   const token = load('token');
-  if (!token) throw new Error('No authorization token found');
 
-  const response = await fetch(`${apiBase}${apiAuctionListings}${apiSeller}`, {
+  // Build query string based on whether to include seller info
+  const query = includeSeller ? apiSeller : '';
+
+  const response = await fetch(`${apiBase}${apiAuctionListings}${query}`, {
     headers: {
-      Authorization: `Bearer ${token}`,
-      'X-Noroff-API-Key': `${apiKey}`,
+      'X-Noroff-API-Key': apiKey,
+      ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
     },
   });
+
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || 'Could not fetch posts');
+    throw new Error(error.message || 'Could not fetch listings');
   }
 
-  return await response.json();
+  const result = await response.json();
+  return result.data; // v2 wraps listings in `data`
 }
-//
