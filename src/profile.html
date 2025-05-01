@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/profile.js" type="module" defer></script>
+    <title>Auction House</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg px-3">
+        <a class="navbar-brand" href="#">MyLogo</a>
+        <div class="ms-auto d-flex align-items-center gap-3">
+          <div class="me-3 text-white bg-primary rounded px-3 py-1">
+            Credits: <span class="user-credit"></span>
+          </div>
+          <div class="ms-auto dropdown">
+            <img
+              src="../img/profile.jpg"
+              class="profile-img dropdown-toggle rounded-circle img-fluid"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              alt="Profile Picture" />
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><span class="dropdown-user"></span></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" id="logout" href="#">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="card">
+          <div class="profile-banner card card-img-top"></div>
+          <div class="card-body d-flex">
+            <div class="profile-avatar p-2">Avatar</div>
+            <div class="user-info p-2">Info</div>
+            <div class="credits p-2 ms-auto">
+              Credits: <span class="user-credit"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

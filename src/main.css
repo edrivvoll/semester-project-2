@@ -11872,4 +11872,8 @@ header {
 .card {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.dropdown-user {
+  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
 }/*# sourceMappingURL=main.css.map */
