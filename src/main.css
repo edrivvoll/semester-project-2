@@ -11876,4 +11876,21 @@ header {
 
 .dropdown-user {
   padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+}
+
+.profile-avatar img {
+  border-radius: 50%;
+  max-width: 70px;
+}
+
+.hidden-card {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.visible-card {
+  max-height: 500px; /* adjust as needed */
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */

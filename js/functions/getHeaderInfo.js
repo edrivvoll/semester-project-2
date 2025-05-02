@@ -10,9 +10,4 @@ export async function getHeaderInfo() {
   const credit = await getProfile(username.name);
 
   creditBox.forEach((e) => (e.textContent = credit.credits));
-
-  // el.textContent = credit.credits;
-  //});
-  //el.textContent(credit.credits));
-  //creditBox.textContent(credit.credits);
 }

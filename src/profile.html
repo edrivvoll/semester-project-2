@@ -35,15 +35,72 @@
       </nav>
     </header>
     <main>
-      <div class="container">
+      <div class="container mt-5">
         <div class="card">
           <div class="profile-banner card card-img-top"></div>
-          <div class="card-body d-flex">
+          <button
+            type="submit"
+            id="edit-btn"
+            class="btn bg-secondary position-absolute m-2">
+            Edit Profile
+          </button>
+          <div class="card-body d-flex align-items-center">
             <div class="profile-avatar p-2">Avatar</div>
             <div class="user-info p-2">Info</div>
             <div class="credits p-2 ms-auto">
               Credits: <span class="user-credit"></span>
             </div>
+          </div>
+        </div>
+        <div id="edit-card" class="card mt-3 p-2 hidden-card">
+          <div class="edit-box">
+            <form class="container p-4 bg-light rounded shadow-sm">
+              <h4 class="mb-4">Edit Profile</h4>
+
+              <!-- Avatar URL -->
+              <div class="mb-3">
+                <label for="avatarUrl" class="form-label">Avatar URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="avatarUrl"
+                  name="avatarUrl"
+                  placeholder="Enter avatar image URL" />
+              </div>
+
+              <!-- Banner URL -->
+              <div class="mb-3">
+                <label for="bannerUrl" class="form-label">Banner URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="bannerUrl"
+                  name="bannerUrl"
+                  placeholder="Enter banner image URL" />
+              </div>
+
+              <!-- Bio -->
+              <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea
+                  class="form-control"
+                  id="bio"
+                  name="bio"
+                  rows="4"
+                  placeholder="Write something about yourself..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-flex align-items-center">
+            <button type="submit" id="cancel-btn" class="btn bg-third m-2">
+              Cancel
+            </button>
+            <button type="submit" id="save-btn" class="btn bg-secondary m-2">
+              Save Changes
+            </button>
+            </form>
+          </div>
+          
           </div>
         </div>
       </div>
