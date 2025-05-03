@@ -1,3 +1,4 @@
+import { bidContainer } from './functions/bidContainer.js';
 import { getHeaderInfo } from './functions/getHeaderInfo.js';
 import { getListings } from './functions/getListings.js';
 import { headerDisplay } from './functions/headerDisplay.js';
@@ -11,3 +12,4 @@ listingsFeed();
 logout();
 getHeaderInfo();
 headerDisplay();
+bidContainer();

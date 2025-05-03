@@ -5,7 +5,7 @@ export function logout() {
     logoutBtn.addEventListener('click', function (event) {
       event.preventDefault();
       localStorage.clear();
-      window.location.replace('../src/index.html');
+      window.location.replace('../src/feed.html');
     });
   }
 }
