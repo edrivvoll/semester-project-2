@@ -3,7 +3,13 @@ import { load } from './load.js';
 
 const querryString = document.location.search;
 const params = new URLSearchParams(querryString);
-const id = params.get('id');
+let id = params.get('id');
+
+if (id === null) {
+  id = '';
+} else {
+  id = '/' + id;
+}
 
 export async function getSingleListing({
   includeSeller = true,
@@ -15,15 +21,12 @@ export async function getSingleListing({
   // const query = includeSeller ? apiSeller : '';
   const query = includeSeller ? apiSeller : '';
 
-  const response = await fetch(
-    `${apiBase}${apiAuctionListings}/${id}${query}`,
-    {
-      headers: {
-        'X-Noroff-API-Key': apiKey,
-        ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
-      },
-    }
-  );
+  const response = await fetch(`${apiBase}${apiAuctionListings}${id}${query}`, {
+    headers: {
+      'X-Noroff-API-Key': apiKey,
+      ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
+    },
+  });
 
   if (!response.ok) {
     const error = await response.json();

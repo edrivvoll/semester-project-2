@@ -7,6 +7,16 @@ export async function listingsFeed() {
   // const listingsArray = listings.data;
   const userEmail = load('useremail');
   console.log(listings);
+  let displayBid = '';
+  let displayBtn = '';
+  if (!userEmail) {
+    displayBid = 'd-none';
+    displayBtn = '';
+  } else {
+    displayBtn = 'd-none';
+    displayBid = '';
+  }
+
   listingsContainer.innerHTML = ``;
 
   listings.forEach((i) => {
@@ -32,12 +42,25 @@ export async function listingsFeed() {
 
         <div class="card mb-4">
             <img src="${img}" alt="${i?.media[0]?.alt}">
+            <p class="btn bg-secondary position-absolute m-2">Bids ${i.bids.length}</p>
             <div class="card-body">
                 <h5 class="card-title">${i.title}</h5>
                 <p class="card-text">${i.description}</p>
+                <div class="bid-box ${displayBid}">
+                <input
+                  type="number"
+                  class=""
+                  id="bid-input"
+                  name="bid-input"
+                  placeholder="Enter bid" />
+                  <button type="submit" id="bidBtn" class="btn bg-secondary m-2">Bid</button>
+                </div>
+                <div class="button-container ${displayBtn} m-2">
+                  <a href="./login.html" class="btn bg-secondary">Login</a>
+                  <a href="./register.html" class="btn bg-secondary">Register</a>
+                </div>
                 <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary">View Details</a>
-                <div class="bid-box"></div>
-                <div class="button-container"></div>
+                
                 </div>
         </div>
 

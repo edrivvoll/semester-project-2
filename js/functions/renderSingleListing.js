@@ -1,4 +1,7 @@
+// import { bidCall } from './bidCall';
+// import { bidCall } from './bidCall.js';
 import { getSingleListing } from './getSingleListing.js';
+import { load } from './load.js';
 
 export async function renderSingleListing() {
   const listing = await getSingleListing();
@@ -50,4 +53,32 @@ export async function renderSingleListing() {
     </tr>
     `;
   }
+
+  const profile = load('profile');
+  const makeBidContainer = document.querySelector('.make-bid-container');
+  console.log(profile);
+  if (profile) {
+    makeBidContainer.classList.remove('d-none');
+  }
+
+  /* const bidBtn = document.getElementById('bidBtn');
+
+  bidBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const bid = Number(document.getElementById('bid-input').value);
+    let dataSet = {
+      amount: bid,
+    };
+    console.log(dataSet);
+
+    try {
+      await bidCall(listing.id, dataSet);
+      console.log(listing.id);
+      alert('Bid placed successfully!');
+      window.location.reload();
+    } catch (error) {
+      console.error('Failed to place bid:', error.message);
+      alert('Failed to place bid. Please try again.');
+    }
+  }); */
 }

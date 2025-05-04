@@ -21,7 +21,7 @@ export async function editCall() {
   );
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || 'Could not update the post');
+    throw new Error(errors.message || 'Could not edit profile');
   }
 
   return await response.json();

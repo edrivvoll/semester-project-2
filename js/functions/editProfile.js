@@ -38,8 +38,8 @@ export async function editProfile() {
       alert('Profile updated successfully!');
       window.location.reload();
     } catch (error) {
-      console.error('Failed to update post:', error.message);
-      alert('Failed to update post. Please try again.');
+      console.error('Failed to update profile:', error.message);
+      alert('Failed to update profile. Please try again.');
     }
   });
 }
