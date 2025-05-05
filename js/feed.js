@@ -1,4 +1,6 @@
 import { bidClick } from './functions/bidClick.js';
+import { loadListing } from './functions/createListing.js';
+import { createListingBox } from './functions/createListingBox.js';
 import { getHeaderInfo } from './functions/getHeaderInfo.js';
 import { getListings } from './functions/getListings.js';
 import { headerDisplay } from './functions/headerDisplay.js';
@@ -13,3 +15,5 @@ logout();
 getHeaderInfo();
 headerDisplay();
 bidClick();
+createListingBox();
+loadListing();

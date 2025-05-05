@@ -34,6 +34,74 @@
       </nav>
     </header>
     <main>
+      <div class="container ">
+        <div class="create-listing">
+          <button type="submit" id="create-listing" class="btn bg-secondary m-2">
+            Create Listing
+          </button>
+        </div>
+        <div class="search">
+        </div>
+        <div class="create-listing-container">
+          <div id="edit-card" class="card mt-3 p-2 hidden-card">
+            <!--  -->
+            <div class="edit-box">
+              <form class="container p-4 bg-light rounded shadow-sm">
+                <h4 class="mb-4">Create Listing</h4>
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    name="title"
+                    placeholder="Enter the title of your listing" />
+                </div>
+                <div class="mb-3">
+                  <label for="description" class="form-label">Description:</label>
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    rows="4"
+                    placeholder="Enter the description for your listing"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="media" class="form-label">Description:</label>
+                  <textarea
+                    type="URL"
+                    class="form-control"
+                    id="media"
+                    name="media"
+                    rows="3"
+                    placeholder="Enter the URL of your media"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="ends-at" class="form-label">End date and time:</label>
+                  <input
+                    type="datetime-local"
+                    class="form-control"
+                    id="ends-at"
+                    name="ends-at"
+                    placeholder="Write the end of listing" />
+                </div>
+  
+                <!-- Submit Button -->
+                <div class="d-flex align-items-center">
+              <button type="submit" id="cancel-btn" class="btn bg-third m-2">
+                Cancel
+              </button>
+              <button type="submit" id="create-listing-btn" class="btn bg-secondary m-2">
+                Create Listing
+              </button>
+              </form>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
         <!-- Listing section -->
         <div class="container p-4">
             <h2>Listings:</h2>
