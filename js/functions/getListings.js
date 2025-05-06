@@ -11,12 +11,15 @@ export async function getListings({
   // Build query string based on whether to include seller info
   const query = includeSeller ? apiSeller : '';
 
-  const response = await fetch(`${apiBase}${apiAuctionListings}${query}`, {
-    headers: {
-      'X-Noroff-API-Key': apiKey,
-      ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
-    },
-  });
+  const response = await fetch(
+    `${apiBase}${apiAuctionListings}${query}&sortOrder=desc&limit=10&offset=0`,
+    {
+      headers: {
+        'X-Noroff-API-Key': apiKey,
+        ...(useAuth && token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    }
+  );
 
   if (!response.ok) {
     const error = await response.json();

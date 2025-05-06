@@ -46,22 +46,9 @@ export async function listingsFeed() {
             <div class="card-body">
                 <h5 class="card-title">${i.title}</h5>
                 <p class="card-text">${i.description}</p>
-                <div class="bid-box ${displayBid}">
-                <input
-                  type="number"
-                  class=""
-                  id="bid-input"
-                  name="bid-input"
-                  placeholder="Enter bid" />
-                  <button type="submit" id="bidBtn" class="btn bg-secondary m-2">Bid</button>
-                </div>
-                <div class="button-container ${displayBtn} m-2">
-                  <a href="./login.html" class="btn bg-secondary">Login</a>
-                  <a href="./register.html" class="btn bg-secondary">Register</a>
-                </div>
-                <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary">View Details</a>
                 
-                </div>
+                <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary">View Details</a>
+            </div>
         </div>
 
     `;
@@ -70,3 +57,17 @@ export async function listingsFeed() {
     listingsContainer.appendChild(card);
   });
 }
+
+//<div class="bid-box ${displayBid}">
+//                <input
+//                  type="number"
+//                  class=""
+//                  id="bid-input"
+//                  name="bid-input"
+//                  placeholder="Enter bid" />
+//                  <button type="submit" id="bidBtn" class="btn bg-secondary m-2">Bid</button>
+//                </div>
+//                <div class="button-container ${displayBtn} m-2">
+//                  <a href="./login.html" class="btn bg-secondary">Login</a>
+//                  <a href="./register.html" class="btn bg-secondary">Register</a>
+//                </div>

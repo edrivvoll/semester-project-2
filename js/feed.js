@@ -14,6 +14,6 @@ listingsFeed();
 logout();
 getHeaderInfo();
 headerDisplay();
-bidClick();
+// bidClick();
 createListingBox();
 loadListing();
