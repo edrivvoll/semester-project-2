@@ -55,7 +55,7 @@ export function loadListing() {
         const response = await createListing();
         console.log('Listing created successfully:', response);
         alert('Listing created successfully');
-        window.location.reload;
+        window.location.replace('./feed.html');
       } catch (error) {
         console.error('Failed to create listing:', error.message);
       }

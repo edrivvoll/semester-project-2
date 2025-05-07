@@ -1,3 +1,4 @@
+import { deleteListing } from './deleteListing.js';
 import { getListings } from './getListings.js';
 import { load } from './load.js';
 
@@ -7,6 +8,7 @@ export async function listingsFeed() {
   // const listingsArray = listings.data;
   const userEmail = load('useremail');
   console.log(listings);
+  let myListing = '';
   let displayBid = '';
   let displayBtn = '';
   if (!userEmail) {
@@ -20,11 +22,14 @@ export async function listingsFeed() {
   listingsContainer.innerHTML = ``;
 
   listings.forEach((i) => {
-    // const sellerEmail = i.seller.email;
-    // console.log(sellerEmail);
-    // const isSeller = sellerEmail === userEmail;
-    // console.log(isSeller);
-    // console.log(i.media.url);
+    const sellerEmail = i.seller.email;
+    const isSeller = sellerEmail === userEmail;
+
+    if (isSeller) {
+      myListing = '';
+    } else {
+      myListing = 'd-none';
+    }
 
     const card = document.createElement('div');
     card.className = 'col-md-6 col-sm-6 col-xl-4';
@@ -46,8 +51,13 @@ export async function listingsFeed() {
             <div class="card-body">
                 <h5 class="card-title">${i.title}</h5>
                 <p class="card-text">${i.description}</p>
-                
-                <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary">View Details</a>
+                <div class="button-container ${displayBtn} m-2">
+                  <a href="./login.html" class="btn bg-secondary">Login</a>
+                  <a href="./register.html" class="btn bg-secondary">Register</a>
+                </div>
+                <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary mt-1">View Details</a>
+                <a href="#" class="btn btn-primary mt-1 ${myListing}">Edit Listing</a>
+                <a href="#" id="delete-button" class="btn btn-danger mt-1 ${myListing}">Delete Listing</a>
             </div>
         </div>
 
@@ -55,6 +65,14 @@ export async function listingsFeed() {
 
     card.innerHTML = listingCard;
     listingsContainer.appendChild(card);
+
+    const delBtn = document.getElementById('delete-button');
+
+    delBtn.addEventListener('click', () => {
+      deleteListing(i.id);
+      alert('Listing Deleted!');
+      window.location.reload();
+    });
   });
 }
 
@@ -67,7 +85,4 @@ export async function listingsFeed() {
 //                  placeholder="Enter bid" />
 //                  <button type="submit" id="bidBtn" class="btn bg-secondary m-2">Bid</button>
 //                </div>
-//                <div class="button-container ${displayBtn} m-2">
-//                  <a href="./login.html" class="btn bg-secondary">Login</a>
-//                  <a href="./register.html" class="btn bg-secondary">Register</a>
-//                </div>
+//

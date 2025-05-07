@@ -12,7 +12,7 @@ export async function getListings({
   const query = includeSeller ? apiSeller : '';
 
   const response = await fetch(
-    `${apiBase}${apiAuctionListings}${query}&sortOrder=desc&limit=10&offset=0`,
+    `${apiBase}${apiAuctionListings}${query}&sortOrder=desc&sort=created`,
     {
       headers: {
         'X-Noroff-API-Key': apiKey,
