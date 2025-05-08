@@ -1,6 +1,8 @@
 import { editCall } from './editCall.js';
+import { getHeaderInfo } from './getHeaderInfo.js';
 import { getProfile } from './getProfile.js';
 import { load } from './load.js';
+import { save } from './save.js';
 export let dataSet = {};
 
 export async function editProfile() {
@@ -36,6 +38,10 @@ export async function editProfile() {
     try {
       await editCall();
       alert('Profile updated successfully!');
+      const pro = await getProfile(username.name);
+      save('profile', pro);
+
+      getHeaderInfo();
       window.location.reload();
     } catch (error) {
       console.error('Failed to update profile:', error.message);
