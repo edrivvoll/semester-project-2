@@ -5,6 +5,7 @@ import { delClick } from './functions/deleteListing.js';
 import { getHeaderInfo } from './functions/getHeaderInfo.js';
 import { getListings } from './functions/getListings.js';
 import { headerDisplay } from './functions/headerDisplay.js';
+import { hideCreateListingBtn } from './functions/hideCreateListingBtn.js';
 import { listingsFeed } from './functions/listingsFeed.js';
 import { logout } from './functions/logout.js';
 import { renderListings } from './functions/renderListings.js';
@@ -20,6 +21,7 @@ headerDisplay();
 createListingBox();
 loadListing();
 delClick();
+hideCreateListingBtn();
 
 const searchBtn = document.getElementById('search-btn');
 const searchWord = document.getElementById('search-input');
