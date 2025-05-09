@@ -11850,6 +11850,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@font-face {
+  font-family: LogoFont;
+  src: url(./fonts/Cinzel-SemiBold.ttf);
+}
 body {
   background-color: #f5f5f5;
 }
@@ -11893,4 +11897,9 @@ header {
 .visible-card {
   max-height: 700px; /* adjust as needed */
   opacity: 1;
+}
+
+.logo {
+  font-family: "LogoFont", sans-serif;
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */

@@ -18,7 +18,11 @@ export async function bidCall(id, dataSet) {
   });
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || 'Could not place bid');
+
+    const message = error?.errors?.[0]?.message || 'Could not place bid';
+    throw new Error(message);
+
+    // throw new Error(error.message || 'Could not place bid');
   }
 
   return await response.json();

@@ -7,6 +7,7 @@ export async function renderSingleListing() {
   const listing = await getSingleListing();
   // const listing = listing.data;
 
+  document.title = 'Auction House - ' + listing.title;
   console.log(listing);
 
   const listingContainer = document.querySelector('#single-listing-container');

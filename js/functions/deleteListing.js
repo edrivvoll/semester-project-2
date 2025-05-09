@@ -1,4 +1,4 @@
-import { apiAuctionListings, apiBase } from '../urls.js';
+import { apiAuctionListings, apiBase, apiKey } from '../urls.js';
 import { load } from './load.js';
 
 export async function deleteListing(id) {
@@ -16,7 +16,9 @@ export async function deleteListing(id) {
   });
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || 'Could not delete listing');
+
+    const message = error?.errors?.[0]?.message || 'Could not delete listing';
+    throw new Error(message);
   }
 
   return await response.json();

@@ -19,8 +19,10 @@ export async function bidClick() {
       alert('Bid placed successfully!');
       window.location.reload();
     } catch (error) {
-      console.error('Failed to place bid:', error.message);
-      alert('Failed to place bid. Please try again.');
+      // throw new Error(error);
+      alert(error);
+      // console.error('Failed to place bid:', error.message);
+      // alert('Failed to place bid. Please try again.');
     }
   });
 }

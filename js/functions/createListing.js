@@ -35,7 +35,10 @@ export async function createListing() {
 
     if (!response.ok) {
       const error = await response.json();
-      throw new Error(error.message || 'Could not create post');
+
+      const message = error?.errors?.[0]?.message || 'Could not create listing';
+      //throw new Error(message);
+      alert(message);
     }
 
     return await response.json();

@@ -6,7 +6,6 @@ export async function search() {
   const searchBtn = document.getElementById('search-btn');
   const listingsContainer = document.getElementById('listings-container');
 
-  const profile = load('profile');
   const token = load('token');
   const userEmail = load('useremail');
   let myListing = '';
@@ -15,12 +14,14 @@ export async function search() {
   if (!userEmail) {
     displayBid = 'd-none';
     displayBtn = '';
+    myListing = 'd-none';
   } else {
     displayBtn = 'd-none';
     displayBid = '';
+    myListing = '';
   }
 
-  if (!token) throw new Error('No authorization token found');
+  // if (!token) throw new Error('No authorization token found');
 
   const response = await fetch(
     `${apiBase}${apiAuctionListings}/search?sort=created&q=${searchWord}&_seller=true&_bids=true`,
@@ -28,7 +29,7 @@ export async function search() {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        Authorization: `Bearer ${token}`,
+        /* Authorization: `Bearer ${token}`, */
         'X-Noroff-API-Key': `${apiKey}`,
       },
     }
@@ -43,13 +44,15 @@ export async function search() {
 
   listingsContainer.innerHTML = ``;
   answer.data.forEach((i) => {
-    const sellerEmail = i.seller.email;
-    const isSeller = sellerEmail === userEmail;
+    if (userEmail) {
+      const sellerEmail = i.seller.email;
+      const isSeller = sellerEmail === userEmail;
 
-    if (isSeller) {
-      myListing = '';
-    } else {
-      myListing = 'd-none';
+      if (isSeller) {
+        myListing = '';
+      } else {
+        myListing = 'd-none';
+      }
     }
 
     const card = document.createElement('div');

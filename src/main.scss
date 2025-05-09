@@ -11,6 +11,10 @@ $third: #f5f5f5;
 @import '../node_modules/bootstrap/scss/variables';
 @import '../node_modules/bootstrap/scss/functions';
 
+@font-face {
+  font-family: LogoFont;
+  src: url(./fonts/Cinzel-SemiBold.ttf);
+}
 // Then add additional custom code here
 body {
   background-color: $third;
@@ -56,4 +60,9 @@ header {
 .visible-card {
   max-height: 700px; /* adjust as needed */
   opacity: 1;
+}
+
+.logo {
+  font-family: 'LogoFont', sans-serif;
+  font-size: 2rem;
 }
