@@ -17,8 +17,19 @@
           Credits: <span class="user-credit"></span>
           </div>
           <div class="ms-auto dropdown">
-            <img src="../img/profile.jpg" type="button" id="dropdownMenuButton" class="profile-img dropdown-toggle rounded-circle img-fluid" data-bs-toggle="dropdown" aria-expanded="false" alt="Profile Picture">
-            <ul class="dropdown-menu dropdown-menu-end">
+            <button 
+              type="button" 
+              id="dropdownMenuButton" 
+              class="btn dropdown-toggle p-0 border-0 bg-transparent" 
+              data-bs-toggle="dropdown" 
+              aria-expanded="false">
+              <img 
+                src="../img/profile.jpg" 
+                class="profile-img rounded-circle img-fluid" 
+                alt="Profile Picture">
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
               <li><span class="dropdown-user"></span></li>
               <li><hr class="dropdown-divider"></li>            
               <li><a class="dropdown-item" href="profile.html">Profile</a></li>
