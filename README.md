@@ -1,8 +1,6 @@
-# semester-project-2
+# Semester-Project-2 Auction House
 
-# E-Auction House
-
-Welcome to the **E-Auction House**, a simple online platform for browsing and bidding on auction listings.
+Welcome to the **Auction House**, a simple online platform for browsing and bidding on auction listings.
 
 ## Live Demo
 
