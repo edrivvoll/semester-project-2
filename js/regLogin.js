@@ -4,5 +4,3 @@ import { apiBase } from './urls.js';
 
 formValidation();
 setAuthListener();
-
-console.log(apiBase);

@@ -18,5 +18,5 @@ export async function getProfile(username) {
   }
 
   const result = await response.json();
-  return result.data; // credits will be inside here
+  return result.data;
 }

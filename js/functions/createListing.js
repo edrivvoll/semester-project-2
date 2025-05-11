@@ -37,7 +37,6 @@ export async function createListing() {
       const error = await response.json();
 
       const message = error?.errors?.[0]?.message || 'Could not create listing';
-      //throw new Error(message);
       alert(message);
     }
 
@@ -56,7 +55,6 @@ export function loadListing() {
       e.preventDefault();
       try {
         const response = await createListing();
-        console.log('Listing created successfully:', response);
         alert('Listing created successfully');
         window.location.replace('./feed.html');
       } catch (error) {

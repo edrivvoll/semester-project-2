@@ -21,15 +21,12 @@ export async function search() {
     myListing = '';
   }
 
-  // if (!token) throw new Error('No authorization token found');
-
   const response = await fetch(
     `${apiBase}${apiAuctionListings}/search?sort=created&q=${searchWord}&_seller=true&_bids=true`,
     {
       method: 'GET',
       headers: {
         'Content-type': 'application/json',
-        /* Authorization: `Bearer ${token}`, */
         'X-Noroff-API-Key': `${apiKey}`,
       },
     }
@@ -39,8 +36,6 @@ export async function search() {
     throw new Error(errors.message || 'Could not edit profile');
   }
   const answer = await response.json();
-  console.log(answer.data);
-  //return await response.json();
 
   listingsContainer.innerHTML = ``;
   answer.data.forEach((i) => {

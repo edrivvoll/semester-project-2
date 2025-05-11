@@ -33,21 +33,16 @@ export async function onAuth(event) {
       await login(email, password);
       window.location.replace('/src/feed.html');
     }
-
-    // const posts = await getListings();
-    // console.log(posts);
   } catch (error) {
-    console.error(error); // Optional for debugging
     if (errorBox) {
       errorBox.textContent = error.message;
-      errorBox.classList.add('text-danger'); // Make it visually red (Bootstrap)
+      errorBox.classList.add('text-danger');
     }
   }
 }
 
 export function setAuthListener() {
   const form = document.forms.auth;
-  console.log(form);
   if (!form) throw new Error('Auth form not found');
   form.addEventListener('submit', onAuth);
 }

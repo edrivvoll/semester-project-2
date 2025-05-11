@@ -5,9 +5,7 @@ import { load } from './load.js';
 export async function listingsFeed() {
   const listings = await getListings();
   const listingsContainer = document.getElementById('listings-container');
-  // const listingsArray = listings.data;
   const userEmail = load('useremail');
-  console.log(listings);
   let myListing = '';
   let displayBid = '';
   let displayBtn = '';
@@ -56,7 +54,7 @@ export async function listingsFeed() {
                   <a href="./register.html" class="btn bg-secondary">Register</a>
                 </div>
                 <a href="/src/singlelisting.html?id=${i.id}" class="btn btn-primary mt-1">View Details</a>
-                <a href="#" class="btn btn-primary mt-1 ${myListing}">Edit Listing</a>
+                <a href="#" class="btn btn-primary mt-1 d-none">Edit Listing</a>
                 <a href="#" id="delete-button" class="btn btn-danger mt-1 ${myListing}">Delete Listing</a>
             </div>
         </div>
@@ -75,14 +73,3 @@ export async function listingsFeed() {
     });
   });
 }
-
-//<div class="bid-box ${displayBid}">
-//                <input
-//                  type="number"
-//                  class=""
-//                  id="bid-input"
-//                  name="bid-input"
-//                  placeholder="Enter bid" />
-//                  <button type="submit" id="bidBtn" class="btn bg-secondary m-2">Bid</button>
-//                </div>
-//

@@ -8,8 +8,6 @@ export let dataSet = {};
 export async function editProfile() {
   const username = load('profile');
   const profile = await getProfile(username.name);
-  console.log(profile);
-  //console.log(listingArray);
 
   document.querySelector('#avatarUrl').value = profile.avatar.url || '';
   document.querySelector('#bannerUrl').value = profile.banner.url || '';

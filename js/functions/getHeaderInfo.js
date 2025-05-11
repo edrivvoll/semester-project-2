@@ -6,7 +6,6 @@ export async function getHeaderInfo() {
   const username = load('profile');
   if (username) {
     usernameBox.append(username.name);
-    console.log(username);
     const profileImg = document.querySelector('.profile-img');
     const creditBox = document.querySelectorAll('.user-credit');
     const credit = await getProfile(username.name);

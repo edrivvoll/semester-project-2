@@ -11,18 +11,13 @@ export async function bidClick() {
     let dataSet = {
       amount: bid,
     };
-    console.log(dataSet);
 
     try {
       await bidCall(listing.id, dataSet);
-      console.log(listing.id);
       alert('Bid placed successfully!');
       window.location.reload();
     } catch (error) {
-      // throw new Error(error);
       alert(error);
-      // console.error('Failed to place bid:', error.message);
-      // alert('Failed to place bid. Please try again.');
     }
   });
 }

@@ -2,7 +2,6 @@ import { apiAuctionListings, apiBase, apiKey } from '../urls.js';
 import { load } from './load.js';
 
 export async function deleteListing(id) {
-  const profile = load('profile');
   const token = load('token');
   if (!token) throw new Error('No authorization token found');
 
@@ -22,15 +21,4 @@ export async function deleteListing(id) {
   }
 
   return await response.json();
-}
-
-export async function delClick() {
-  /*   const delBtn = document.getElementById('delete-button');
-
-  delBtn.addEventListener('click', () => {
-    console.log(i);
-    deleteListing(i.id);
-    alert('Listing Deleted!');
-    window.location.reload();
-  }); */
 }

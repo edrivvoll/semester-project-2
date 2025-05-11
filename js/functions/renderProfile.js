@@ -8,10 +8,8 @@ export async function renderProfile() {
 
   const username = load('profile');
   const profile = await getProfile(username.name);
-  console.log(profile);
 
   profileBanner.innerHTML = `<img src="${profile.banner.url}" alt="${profile.banner.alt}">`;
-  console.log(profile.banner.url);
 
   avatar.innerHTML = `<img src="${profile.avatar.url}" alt="${profile.avatar.alt}">`;
 

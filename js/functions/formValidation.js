@@ -5,7 +5,6 @@ export function formValidation() {
     const emailInput = form['email'];
     const passwordInput = form['password'];
     const errorBox = document.querySelector('.error-box');
-    console.log(document.location.pathname);
 
     form.addEventListener('submit', function (event) {
       let errors = [];
