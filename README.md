@@ -1,6 +1,6 @@
 # Auction House
 
-![Auction House](https://e-auctionhouse.netlify.app/src/feed)
+![Auction House](https://github.com/user-attachments/assets/1d1a266b-779f-4716-b92d-576bd1f948a8)
 
 An online auction platform where users can browse active listings, place bids, create their own listings, and manage their profile.
 
